@@ -1,33 +1,68 @@
 name: surf_flutter_summer_school_24
-description: "Surf Flutter Summer School '24"
-publish_to: 'none'
-version: 0.1.0
-
-environment:
-  sdk: '>=3.4.3 <4.0.0'
+version: "0.0.1-dev.0"
+description: a Flutter template project for development.
+publish_to: none
 
 dependencies:
+  analytics: 2.0.0
+  auto_route: 7.8.4
+  cached_network_image: 3.3.1
+  collection: 1.18.0
+  dio: 5.4.0
+  elementary: 3.0.0
+  firebase_core: 2.24.2
+  firebase_crashlytics: 3.4.9
   flutter:
     sdk: flutter
-  carousel_slider: ^4.0.0
-  intl: 0.19.0
-  flutter_blurhash: ^0.8.0
-  google_fonts: ^6.2.1
-  path_provider: ^2.1.1
-  shimmer: ^2.0.0
-  cached_network_image: ^3.3.1
-  shared_preferences: ^2.2.3
-  collection: ^1.18.0
-
+  flutter_easy_dialogs: 3.2.0
+  flutter_localizations:
+    sdk: flutter
+  flutter_secure_storage: 9.0.0
+  flutter_svg: 2.0.9
+  freezed_annotation: 2.4.1
+  fresh_dio: 0.4.1
+  intl:
+  json_annotation: 4.8.1
+  logger: 1.4.0
+  mask_text_input_formatter: 2.9.0
+  nested: 1.0.0
+  path: 1.9.0
+  path_provider: 2.1.2
+  provider: 6.1.1
+  retrofit: 4.0.3
+  rxdart: 0.27.7
+  shared_preferences: 2.2.2
+  shimmer: 3.0.0
+  surf_logger: 2.0.0
+  surf_widget_test_composer: 0.0.2
+  theme_tailor_annotation: 3.0.1
+  union_state: 0.0.1
 
 dev_dependencies:
+  auto_route_generator: 7.3.2
+  build_runner: 2.4.8
+  elementary_test: 2.0.0
+  flutter_launcher_icons: 0.13.1
+  flutter_native_splash: 2.3.9
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
+  freezed: 2.4.7
+  golden_toolkit: 0.15.0
+  json_serializable: 6.7.1
+  mocktail: 1.0.3
+  retrofit_generator: 8.0.6
+  spider: 4.2.2
+  surf_dcm_presets: 0.0.2
+  surf_lint_rules: 3.0.0
+  theme_tailor: 3.0.1
 
+environment:
+  sdk: ">=3.2.5 <4.0.0"
+  flutter: 3.19.0
 
 flutter:
   uses-material-design: true
   assets:
-    - assets/logo.png
-    - assets/logo-light.png
+    - assets/fonts/
+    - assets/icons/
+    - assets/images/
