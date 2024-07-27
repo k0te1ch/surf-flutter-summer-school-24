@@ -1,0 +1,71 @@
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:surf_flutter_summer_school_24/utils/extensions/context_x.dart';
+
+class PhotoCarouselAppBar extends StatelessWidget
+    implements PreferredSizeWidget {
+  final int currentIndex;
+  final int totalImages;
+  final VoidCallback? onBackPressed;
+
+  const PhotoCarouselAppBar({
+    super.key,
+    required this.currentIndex,
+    required this.totalImages,
+    this.onBackPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      elevation: 0,
+      centerTitle: true,
+      title: Text(
+        DateFormat('dd.MM.yyyy').format(DateTime.now()),
+        style: context.textStyles.headline.copyWith(
+          fontWeight: FontWeight.w300,
+        ),
+      ),
+      leading: onBackPressed != null
+          ? Center(
+              child: SizedBox(
+                width: 60,
+                child: IconButton(
+                  icon: const Icon(Icons.arrow_back),
+                  onPressed: onBackPressed,
+                ),
+              ),
+            )
+          : null,
+      actions: [
+        Center(
+          child: Padding(
+            padding: const EdgeInsets.only(right: 16.0),
+            child: RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: '${currentIndex + 1}',
+                    style: context.textStyles.label.copyWith(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20.0,
+                    ),
+                  ),
+                  TextSpan(
+                    text: '/$totalImages',
+                    style: context.textStyles.label.copyWith(
+                      fontSize: 17.0,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(100.0);
+}
