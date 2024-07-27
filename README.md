@@ -2,6 +2,10 @@
 
 ## Basic Information
 
+### First launch
+
+Для первого запуска поищите все `//TODO(init-project):`
+
 ### Settings
 
 Project line length: 120 characters.
