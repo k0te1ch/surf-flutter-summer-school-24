@@ -1,17 +1,21 @@
-import 'package:elementary/elementary.dart';
-import 'package:surf_flutter_summer_school_24/features/photo_grid/domain/repositories/i_photo_grid_repository.dart';
-import 'package:surf_flutter_summer_school_24/features/photo_grid/presentation/screens/photo_grid/photo_grid_screen.dart';
+// ignore_for_file: public_member_api_docs
 
-/// {@template photo_grid_model.class}
-/// [ElementaryModel] for [PhotoGridScreen].
-/// {@endtemplate}
-final class PhotoGridModel extends ElementaryModel {
-  // ignore: unused_field
+import 'package:elementary/elementary.dart';
+import 'package:surf_flutter_summer_school_24/features/photo_grid/domain/entities/photo_entity.dart';
+import 'package:surf_flutter_summer_school_24/features/photo_grid/domain/repositories/i_photo_grid_repository.dart';
+
+class PhotoGridModel extends ElementaryModel {
   final IPhotoGridRepository _repository;
 
-  /// {@macro photo_grid_model.class}
+  List<PhotoEntity> photos = [];
+
   PhotoGridModel({
     required IPhotoGridRepository repository,
     super.errorHandler,
   }) : _repository = repository;
+
+  Future<List<PhotoEntity>> loadPhotos() async {
+    photos = await _repository.getPhotos();
+    return photos;
+  }
 }

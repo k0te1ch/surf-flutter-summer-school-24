@@ -8,10 +8,9 @@ dependencies:
   auto_route: 7.8.4
   cached_network_image: 3.3.1
   collection: 1.18.0
-  dio: 5.4.0
+  dio: 5.5.0
   elementary: 3.0.0
-  firebase_core: 2.24.2
-  firebase_crashlytics: 3.4.9
+  elementary_helper: ^1.0.1
   flutter:
     sdk: flutter
   flutter_easy_dialogs: 3.2.0
@@ -22,21 +21,21 @@ dependencies:
   freezed_annotation: 2.4.1
   fresh_dio: 0.4.1
   intl:
-  json_annotation: 4.8.1
+  json_annotation: 4.9.0
   logger: 1.4.0
   mask_text_input_formatter: 2.9.0
   nested: 1.0.0
   path: 1.9.0
   path_provider: 2.1.2
   provider: 6.1.1
-  retrofit: 4.0.3
+  retrofit: 4.1.0
   rxdart: 0.27.7
   shared_preferences: 2.2.2
   shimmer: 3.0.0
   surf_logger: 2.0.0
   surf_widget_test_composer: 0.0.2
   theme_tailor_annotation: 3.0.1
-  union_state: 0.0.1
+  union_state: 0.0.3
 
 dev_dependencies:
   auto_route_generator: 7.3.2
@@ -48,7 +47,7 @@ dev_dependencies:
     sdk: flutter
   freezed: 2.4.7
   golden_toolkit: 0.15.0
-  json_serializable: 6.7.1
+  json_serializable: 6.8.0
   mocktail: 1.0.3
   retrofit_generator: 8.0.6
   spider: 4.2.2

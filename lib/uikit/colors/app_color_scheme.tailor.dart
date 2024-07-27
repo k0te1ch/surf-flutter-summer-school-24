@@ -37,6 +37,8 @@ mixin _$AppColorSchemeTailorMixin on ThemeExtension<AppColorScheme> {
   Color get skeletonSecondary;
   Color get skeletonTertiary;
   Color get shimmer;
+  Color get shimmerBase;
+  Color get shimmerHighlight;
 
   @override
   AppColorScheme copyWith({
@@ -68,6 +70,8 @@ mixin _$AppColorSchemeTailorMixin on ThemeExtension<AppColorScheme> {
     Color? skeletonSecondary,
     Color? skeletonTertiary,
     Color? shimmer,
+    Color? shimmerBase,
+    Color? shimmerHighlight,
   }) {
     return AppColorScheme(
       primary: primary ?? this.primary,
@@ -82,14 +86,16 @@ mixin _$AppColorSchemeTailorMixin on ThemeExtension<AppColorScheme> {
       backgroundTertiary: backgroundTertiary ?? this.backgroundTertiary,
       tetradicBackground: tetradicBackground ?? this.tetradicBackground,
       onBackground: onBackground ?? this.onBackground,
-      onBackgroundSecondary: onBackgroundSecondary ?? this.onBackgroundSecondary,
+      onBackgroundSecondary:
+          onBackgroundSecondary ?? this.onBackgroundSecondary,
       danger: danger ?? this.danger,
       dangerSecondary: dangerSecondary ?? this.dangerSecondary,
       onDanger: onDanger ?? this.onDanger,
       textField: textField ?? this.textField,
       textFieldLabel: textFieldLabel ?? this.textFieldLabel,
       textFieldHelper: textFieldHelper ?? this.textFieldHelper,
-      frameTextFieldSecondary: frameTextFieldSecondary ?? this.frameTextFieldSecondary,
+      frameTextFieldSecondary:
+          frameTextFieldSecondary ?? this.frameTextFieldSecondary,
       inactive: inactive ?? this.inactive,
       positive: positive ?? this.positive,
       onPositive: onPositive ?? this.onPositive,
@@ -98,11 +104,14 @@ mixin _$AppColorSchemeTailorMixin on ThemeExtension<AppColorScheme> {
       skeletonSecondary: skeletonSecondary ?? this.skeletonSecondary,
       skeletonTertiary: skeletonTertiary ?? this.skeletonTertiary,
       shimmer: shimmer ?? this.shimmer,
+      shimmerBase: shimmerBase ?? this.shimmerBase,
+      shimmerHighlight: shimmerHighlight ?? this.shimmerHighlight,
     );
   }
 
   @override
-  AppColorScheme lerp(covariant ThemeExtension<AppColorScheme>? other, double t) {
+  AppColorScheme lerp(
+      covariant ThemeExtension<AppColorScheme>? other, double t) {
     if (other is! AppColorScheme) return this as AppColorScheme;
     return AppColorScheme(
       primary: Color.lerp(primary, other.primary, t)!,
@@ -110,29 +119,41 @@ mixin _$AppColorSchemeTailorMixin on ThemeExtension<AppColorScheme> {
       secondary: Color.lerp(secondary, other.secondary, t)!,
       onSecondary: Color.lerp(onSecondary, other.onSecondary, t)!,
       surface: Color.lerp(surface, other.surface, t)!,
-      surfaceSecondary: Color.lerp(surfaceSecondary, other.surfaceSecondary, t)!,
+      surfaceSecondary:
+          Color.lerp(surfaceSecondary, other.surfaceSecondary, t)!,
       onSurface: Color.lerp(onSurface, other.onSurface, t)!,
       background: Color.lerp(background, other.background, t)!,
-      backgroundSecondary: Color.lerp(backgroundSecondary, other.backgroundSecondary, t)!,
-      backgroundTertiary: Color.lerp(backgroundTertiary, other.backgroundTertiary, t)!,
-      tetradicBackground: Color.lerp(tetradicBackground, other.tetradicBackground, t)!,
+      backgroundSecondary:
+          Color.lerp(backgroundSecondary, other.backgroundSecondary, t)!,
+      backgroundTertiary:
+          Color.lerp(backgroundTertiary, other.backgroundTertiary, t)!,
+      tetradicBackground:
+          Color.lerp(tetradicBackground, other.tetradicBackground, t)!,
       onBackground: Color.lerp(onBackground, other.onBackground, t)!,
-      onBackgroundSecondary: Color.lerp(onBackgroundSecondary, other.onBackgroundSecondary, t)!,
+      onBackgroundSecondary:
+          Color.lerp(onBackgroundSecondary, other.onBackgroundSecondary, t)!,
       danger: Color.lerp(danger, other.danger, t)!,
       dangerSecondary: Color.lerp(dangerSecondary, other.dangerSecondary, t)!,
       onDanger: Color.lerp(onDanger, other.onDanger, t)!,
       textField: Color.lerp(textField, other.textField, t)!,
       textFieldLabel: Color.lerp(textFieldLabel, other.textFieldLabel, t)!,
       textFieldHelper: Color.lerp(textFieldHelper, other.textFieldHelper, t)!,
-      frameTextFieldSecondary: Color.lerp(frameTextFieldSecondary, other.frameTextFieldSecondary, t)!,
+      frameTextFieldSecondary: Color.lerp(
+          frameTextFieldSecondary, other.frameTextFieldSecondary, t)!,
       inactive: Color.lerp(inactive, other.inactive, t)!,
       positive: Color.lerp(positive, other.positive, t)!,
       onPositive: Color.lerp(onPositive, other.onPositive, t)!,
       skeletonPrimary: Color.lerp(skeletonPrimary, other.skeletonPrimary, t)!,
-      skeletonOnPrimary: Color.lerp(skeletonOnPrimary, other.skeletonOnPrimary, t)!,
-      skeletonSecondary: Color.lerp(skeletonSecondary, other.skeletonSecondary, t)!,
-      skeletonTertiary: Color.lerp(skeletonTertiary, other.skeletonTertiary, t)!,
+      skeletonOnPrimary:
+          Color.lerp(skeletonOnPrimary, other.skeletonOnPrimary, t)!,
+      skeletonSecondary:
+          Color.lerp(skeletonSecondary, other.skeletonSecondary, t)!,
+      skeletonTertiary:
+          Color.lerp(skeletonTertiary, other.skeletonTertiary, t)!,
       shimmer: Color.lerp(shimmer, other.shimmer, t)!,
+      shimmerBase: Color.lerp(shimmerBase, other.shimmerBase, t)!,
+      shimmerHighlight:
+          Color.lerp(shimmerHighlight, other.shimmerHighlight, t)!,
     );
   }
 
@@ -144,31 +165,52 @@ mixin _$AppColorSchemeTailorMixin on ThemeExtension<AppColorScheme> {
             const DeepCollectionEquality().equals(primary, other.primary) &&
             const DeepCollectionEquality().equals(onPrimary, other.onPrimary) &&
             const DeepCollectionEquality().equals(secondary, other.secondary) &&
-            const DeepCollectionEquality().equals(onSecondary, other.onSecondary) &&
+            const DeepCollectionEquality()
+                .equals(onSecondary, other.onSecondary) &&
             const DeepCollectionEquality().equals(surface, other.surface) &&
-            const DeepCollectionEquality().equals(surfaceSecondary, other.surfaceSecondary) &&
+            const DeepCollectionEquality()
+                .equals(surfaceSecondary, other.surfaceSecondary) &&
             const DeepCollectionEquality().equals(onSurface, other.onSurface) &&
-            const DeepCollectionEquality().equals(background, other.background) &&
-            const DeepCollectionEquality().equals(backgroundSecondary, other.backgroundSecondary) &&
-            const DeepCollectionEquality().equals(backgroundTertiary, other.backgroundTertiary) &&
-            const DeepCollectionEquality().equals(tetradicBackground, other.tetradicBackground) &&
-            const DeepCollectionEquality().equals(onBackground, other.onBackground) &&
-            const DeepCollectionEquality().equals(onBackgroundSecondary, other.onBackgroundSecondary) &&
+            const DeepCollectionEquality()
+                .equals(background, other.background) &&
+            const DeepCollectionEquality()
+                .equals(backgroundSecondary, other.backgroundSecondary) &&
+            const DeepCollectionEquality()
+                .equals(backgroundTertiary, other.backgroundTertiary) &&
+            const DeepCollectionEquality()
+                .equals(tetradicBackground, other.tetradicBackground) &&
+            const DeepCollectionEquality()
+                .equals(onBackground, other.onBackground) &&
+            const DeepCollectionEquality()
+                .equals(onBackgroundSecondary, other.onBackgroundSecondary) &&
             const DeepCollectionEquality().equals(danger, other.danger) &&
-            const DeepCollectionEquality().equals(dangerSecondary, other.dangerSecondary) &&
+            const DeepCollectionEquality()
+                .equals(dangerSecondary, other.dangerSecondary) &&
             const DeepCollectionEquality().equals(onDanger, other.onDanger) &&
             const DeepCollectionEquality().equals(textField, other.textField) &&
-            const DeepCollectionEquality().equals(textFieldLabel, other.textFieldLabel) &&
-            const DeepCollectionEquality().equals(textFieldHelper, other.textFieldHelper) &&
-            const DeepCollectionEquality().equals(frameTextFieldSecondary, other.frameTextFieldSecondary) &&
+            const DeepCollectionEquality()
+                .equals(textFieldLabel, other.textFieldLabel) &&
+            const DeepCollectionEquality()
+                .equals(textFieldHelper, other.textFieldHelper) &&
+            const DeepCollectionEquality().equals(
+                frameTextFieldSecondary, other.frameTextFieldSecondary) &&
             const DeepCollectionEquality().equals(inactive, other.inactive) &&
             const DeepCollectionEquality().equals(positive, other.positive) &&
-            const DeepCollectionEquality().equals(onPositive, other.onPositive) &&
-            const DeepCollectionEquality().equals(skeletonPrimary, other.skeletonPrimary) &&
-            const DeepCollectionEquality().equals(skeletonOnPrimary, other.skeletonOnPrimary) &&
-            const DeepCollectionEquality().equals(skeletonSecondary, other.skeletonSecondary) &&
-            const DeepCollectionEquality().equals(skeletonTertiary, other.skeletonTertiary) &&
-            const DeepCollectionEquality().equals(shimmer, other.shimmer));
+            const DeepCollectionEquality()
+                .equals(onPositive, other.onPositive) &&
+            const DeepCollectionEquality()
+                .equals(skeletonPrimary, other.skeletonPrimary) &&
+            const DeepCollectionEquality()
+                .equals(skeletonOnPrimary, other.skeletonOnPrimary) &&
+            const DeepCollectionEquality()
+                .equals(skeletonSecondary, other.skeletonSecondary) &&
+            const DeepCollectionEquality()
+                .equals(skeletonTertiary, other.skeletonTertiary) &&
+            const DeepCollectionEquality().equals(shimmer, other.shimmer) &&
+            const DeepCollectionEquality()
+                .equals(shimmerBase, other.shimmerBase) &&
+            const DeepCollectionEquality()
+                .equals(shimmerHighlight, other.shimmerHighlight));
   }
 
   @override
@@ -203,10 +245,13 @@ mixin _$AppColorSchemeTailorMixin on ThemeExtension<AppColorScheme> {
       const DeepCollectionEquality().hash(skeletonSecondary),
       const DeepCollectionEquality().hash(skeletonTertiary),
       const DeepCollectionEquality().hash(shimmer),
+      const DeepCollectionEquality().hash(shimmerBase),
+      const DeepCollectionEquality().hash(shimmerHighlight),
     ]);
   }
 }
 
 extension AppColorSchemeBuildContext on BuildContext {
-  AppColorScheme get appColorScheme => Theme.of(this).extension<AppColorScheme>()!;
+  AppColorScheme get appColorScheme =>
+      Theme.of(this).extension<AppColorScheme>()!;
 }

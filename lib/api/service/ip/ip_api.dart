@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart' hide Headers;
 import 'package:retrofit/retrofit.dart';
-import 'package:surf_flutter_summer_school_24/api/data/ip_dto.dart';
+import 'package:surf_flutter_summer_school_24/api/data/ip/ip_dto.dart';
 
 part 'ip_api.g.dart';
 

@@ -1,4 +1,3 @@
-// ignore_for_file: avoid-non-null-assertion, prefer-correct-callback-field-name
 import 'package:flutter/material.dart';
 import 'package:theme_tailor_annotation/theme_tailor_annotation.dart';
 
@@ -13,13 +12,14 @@ const _skeletonOpacity = 0.06;
 /// Use case:
 ///
 /// ```dart
-/// final colorScheme = CyberdomColorScheme.of(context);
+/// final colorScheme = AppColorScheme.of(context);
 ///
 /// return Container(color: colorScheme.primary);
 /// ```
 @immutable
 @TailorMixin(themeGetter: ThemeGetter.onBuildContext)
-class AppColorScheme extends ThemeExtension<AppColorScheme> with _$AppColorSchemeTailorMixin {
+class AppColorScheme extends ThemeExtension<AppColorScheme>
+    with _$AppColorSchemeTailorMixin {
   /// Base branding color for the app.
   ///
   /// Can be used as an accent color for buttons, switches, labels, icons, etc.
@@ -162,6 +162,14 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> with _$AppColorSchem
   @override
   final Color shimmer;
 
+  /// The color of the shimmer base.
+  @override
+  final Color shimmerBase;
+
+  /// The color of the shimmer highlight.
+  @override
+  final Color shimmerHighlight;
+
   /// @nodoc
   const AppColorScheme({
     required this.primary,
@@ -192,6 +200,8 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> with _$AppColorSchem
     required this.skeletonTertiary,
     required this.tetradicBackground,
     required this.shimmer,
+    required this.shimmerBase,
+    required this.shimmerHighlight,
   });
 
   /// Base light theme version.
@@ -216,14 +226,16 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> with _$AppColorSchem
         textFieldHelper = const Color(0xFF000000),
         frameTextFieldSecondary = const Color(0xFF171717),
         inactive = const Color(0xFF000000),
-        positive = const Color(0xFFBEFF3D),
-        onPositive = const Color(0xFF171717),
+        positive = const Color(0xFF80E7FF),
+        onPositive = const Color(0xFFFFFFFF),
         skeletonPrimary = Colors.black.withOpacity(_skeletonOpacity),
         skeletonOnPrimary = const Color(0xFFFFFFFF),
         skeletonSecondary = const Color(0xFFFFFFFF),
         skeletonTertiary = const Color(0xFFFFFFFF),
         tetradicBackground = const Color(0xFFB5CCAE),
-        shimmer = const Color(0xFFE7E4E0);
+        shimmer = const Color(0xFFE7E4E0),
+        shimmerBase = const Color(0xFFE0E0E0),
+        shimmerHighlight = const Color(0xFF616161);
 
   /// Base dark theme version.
   AppColorScheme.dark()
@@ -247,12 +259,131 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> with _$AppColorSchem
         textFieldHelper = const Color(0xFF000000),
         frameTextFieldSecondary = const Color(0xFFD6D6D6),
         inactive = const Color(0xFF000000),
-        positive = const Color(0xFFC6FF57),
-        onPositive = const Color(0xFF000000),
+        positive = const Color(0xff247487),
+        onPositive = const Color(0xFFFFFFFF),
         skeletonPrimary = Colors.black.withOpacity(_skeletonOpacity),
         skeletonOnPrimary = const Color(0xFFFFFFFF),
         skeletonSecondary = const Color(0xFF222222),
         skeletonTertiary = const Color(0xFFD6D6D6),
         tetradicBackground = const Color(0xFF9CD29C),
-        shimmer = const Color(0xFFE7E4E0);
+        shimmer = const Color(0xFFE7E4E0),
+        shimmerBase = const Color(0xFFF5F5F5),
+        shimmerHighlight = const Color(0xFF616161);
+
+  @override
+  AppColorScheme copyWith({
+    Color? primary,
+    Color? onPrimary,
+    Color? secondary,
+    Color? onSecondary,
+    Color? surface,
+    Color? surfaceSecondary,
+    Color? onSurface,
+    Color? background,
+    Color? backgroundSecondary,
+    Color? backgroundTertiary,
+    Color? tetradicBackground,
+    Color? onBackground,
+    Color? onBackgroundSecondary,
+    Color? danger,
+    Color? dangerSecondary,
+    Color? onDanger,
+    Color? textField,
+    Color? textFieldLabel,
+    Color? textFieldHelper,
+    Color? frameTextFieldSecondary,
+    Color? inactive,
+    Color? positive,
+    Color? onPositive,
+    Color? skeletonPrimary,
+    Color? skeletonOnPrimary,
+    Color? skeletonSecondary,
+    Color? skeletonTertiary,
+    Color? shimmer,
+    Color? shimmerBase,
+    Color? shimmerHighlight,
+  }) {
+    return AppColorScheme(
+      primary: primary ?? this.primary,
+      onPrimary: onPrimary ?? this.onPrimary,
+      secondary: secondary ?? this.secondary,
+      onSecondary: onSecondary ?? this.onSecondary,
+      surface: surface ?? this.surface,
+      surfaceSecondary: surfaceSecondary ?? this.surfaceSecondary,
+      onSurface: onSurface ?? this.onSurface,
+      background: background ?? this.background,
+      backgroundSecondary: backgroundSecondary ?? this.backgroundSecondary,
+      backgroundTertiary: backgroundTertiary ?? this.backgroundTertiary,
+      tetradicBackground: tetradicBackground ?? this.tetradicBackground,
+      onBackground: onBackground ?? this.onBackground,
+      onBackgroundSecondary:
+          onBackgroundSecondary ?? this.onBackgroundSecondary,
+      danger: danger ?? this.danger,
+      dangerSecondary: dangerSecondary ?? this.dangerSecondary,
+      onDanger: onDanger ?? this.onDanger,
+      textField: textField ?? this.textField,
+      textFieldLabel: textFieldLabel ?? this.textFieldLabel,
+      textFieldHelper: textFieldHelper ?? this.textFieldHelper,
+      frameTextFieldSecondary:
+          frameTextFieldSecondary ?? this.frameTextFieldSecondary,
+      inactive: inactive ?? this.inactive,
+      positive: positive ?? this.positive,
+      onPositive: onPositive ?? this.onPositive,
+      skeletonPrimary: skeletonPrimary ?? this.skeletonPrimary,
+      skeletonOnPrimary: skeletonOnPrimary ?? this.skeletonOnPrimary,
+      skeletonSecondary: skeletonSecondary ?? this.skeletonSecondary,
+      skeletonTertiary: skeletonTertiary ?? this.skeletonTertiary,
+      shimmer: shimmer ?? this.shimmer,
+      shimmerBase: shimmerBase ?? this.shimmerBase,
+      shimmerHighlight: shimmerHighlight ?? this.shimmerHighlight,
+    );
+  }
+
+  @override
+  AppColorScheme lerp(ThemeExtension<AppColorScheme>? other, double t) {
+    if (other is! AppColorScheme) return this;
+
+    return AppColorScheme(
+      primary: Color.lerp(primary, other.primary, t)!,
+      onPrimary: Color.lerp(onPrimary, other.onPrimary, t)!,
+      secondary: Color.lerp(secondary, other.secondary, t)!,
+      onSecondary: Color.lerp(onSecondary, other.onSecondary, t)!,
+      surface: Color.lerp(surface, other.surface, t)!,
+      surfaceSecondary:
+          Color.lerp(surfaceSecondary, other.surfaceSecondary, t)!,
+      onSurface: Color.lerp(onSurface, other.onSurface, t)!,
+      background: Color.lerp(background, other.background, t)!,
+      backgroundSecondary:
+          Color.lerp(backgroundSecondary, other.backgroundSecondary, t)!,
+      backgroundTertiary:
+          Color.lerp(backgroundTertiary, other.backgroundTertiary, t)!,
+      tetradicBackground:
+          Color.lerp(tetradicBackground, other.tetradicBackground, t)!,
+      onBackground: Color.lerp(onBackground, other.onBackground, t)!,
+      onBackgroundSecondary:
+          Color.lerp(onBackgroundSecondary, other.onBackgroundSecondary, t)!,
+      danger: Color.lerp(danger, other.danger, t)!,
+      dangerSecondary: Color.lerp(dangerSecondary, other.dangerSecondary, t)!,
+      onDanger: Color.lerp(onDanger, other.onDanger, t)!,
+      textField: Color.lerp(textField, other.textField, t)!,
+      textFieldLabel: Color.lerp(textFieldLabel, other.textFieldLabel, t)!,
+      textFieldHelper: Color.lerp(textFieldHelper, other.textFieldHelper, t)!,
+      frameTextFieldSecondary: Color.lerp(
+          frameTextFieldSecondary, other.frameTextFieldSecondary, t)!,
+      inactive: Color.lerp(inactive, other.inactive, t)!,
+      positive: Color.lerp(positive, other.positive, t)!,
+      onPositive: Color.lerp(onPositive, other.onPositive, t)!,
+      skeletonPrimary: Color.lerp(skeletonPrimary, other.skeletonPrimary, t)!,
+      skeletonOnPrimary:
+          Color.lerp(skeletonOnPrimary, other.skeletonOnPrimary, t)!,
+      skeletonSecondary:
+          Color.lerp(skeletonSecondary, other.skeletonSecondary, t)!,
+      skeletonTertiary:
+          Color.lerp(skeletonTertiary, other.skeletonTertiary, t)!,
+      shimmer: Color.lerp(shimmer, other.shimmer, t)!,
+      shimmerBase: Color.lerp(shimmerBase, other.shimmerBase, t)!,
+      shimmerHighlight:
+          Color.lerp(shimmerHighlight, other.shimmerHighlight, t)!,
+    );
+  }
 }

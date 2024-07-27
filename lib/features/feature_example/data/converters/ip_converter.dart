@@ -1,4 +1,4 @@
-import 'package:surf_flutter_summer_school_24/api/data/ip_dto.dart';
+import 'package:surf_flutter_summer_school_24/api/data/ip/ip_dto.dart';
 import 'package:surf_flutter_summer_school_24/core/architecture/data/converter/converter.dart';
 import 'package:surf_flutter_summer_school_24/features/feature_example/domain/entities/ip_entity.dart';
 

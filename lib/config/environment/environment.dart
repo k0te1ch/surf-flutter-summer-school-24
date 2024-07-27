@@ -1,4 +1,3 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:surf_flutter_summer_school_24/config/environment/build_type.dart';
 import 'package:surf_flutter_summer_school_24/config/url.dart';
 
@@ -10,9 +9,6 @@ class Environment {
   /// Build type.
   final BuildType buildType;
 
-  /// Firebase options for initialize.
-  final FirebaseOptions? firebaseOptions;
-
   /// Is this application running in dev mode.
   bool get isDev => buildType == BuildType.dev;
 
@@ -22,7 +18,6 @@ class Environment {
   /// {@macro environment.class}
   const Environment({
     required this.buildType,
-    this.firebaseOptions,
   });
 }
 

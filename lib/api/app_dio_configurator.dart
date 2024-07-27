@@ -42,12 +42,35 @@ class AppDioConfigurator {
       return client;
     };
 
-    dio.interceptors.addAll(interceptors);
+    dio.interceptors.addAll([
+      _createCustomInterceptor(),
+      ...interceptors,
+    ]);
 
     if (kDebugMode) {
-      dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
+      dio.interceptors
+          .add(LogInterceptor(requestBody: true, responseBody: true));
     }
 
     return dio;
+  }
+
+  Interceptor _createCustomInterceptor() {
+    return InterceptorsWrapper(
+      onRequest: (options, handler) {
+        // Здесь можно добавить кастомную логику для запросов
+        // Например, добавление заголовков или параметров
+        options.headers['Custom-Header'] = 'SomeValue';
+        return handler.next(options);
+      },
+      onResponse: (response, handler) {
+        // Здесь можно обработать ответ
+        return handler.next(response);
+      },
+      onError: (error, handler) {
+        // Здесь можно обработать ошибки
+        return handler.next(error);
+      },
+    );
   }
 }

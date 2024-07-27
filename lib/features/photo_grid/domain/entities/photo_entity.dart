@@ -13,5 +13,6 @@ class PhotoEntity with _$PhotoEntity {
     String? description,
   }) = _PhotoEntity;
 
-  factory PhotoEntity.fromJson(Map<String, dynamic> json) => _$PhotoEntityFromJson(json);
+  factory PhotoEntity.fromJson(Map<String, dynamic> json) =>
+      _$PhotoEntityFromJson(json);
 }

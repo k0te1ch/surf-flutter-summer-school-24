@@ -5,7 +5,7 @@ import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:surf_flutter_summer_school_24/features/photo_carousel/presentation/screens/photo_carousel/photo_carousel_wm.dart';
-import 'package:surf_flutter_summer_school_24/util/extensions/context_x.dart';
+import 'package:surf_flutter_summer_school_24/common/utils/extentions/context_x.dart';
 
 class PhotoCarousel extends StatefulWidget {
   final List<CachedNetworkImageProvider> imageProviders;

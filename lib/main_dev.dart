@@ -11,12 +11,8 @@ void main() {
 // TODO(Task): Оформить readme.md
 // TODO(Task): Разнести код на слои
 // TODO(Task): Декомпозиция
-// TODO(Task): pre-commit
 
 // TODO(Task): Реализовать доменные модели
-// TODO(Task): Реализовать мокирование данных
-// TODO(Task): Реализовать state management не через setState
-// TODO(Task): Реализовать DI или ServiceLocator
 
 // TODO(Task): Env
 // TODO(Task): Получение изображений из галереи и камеры
@@ -24,6 +20,5 @@ void main() {
 // TODO(Task): Модели данных (для десериализации и бизнес-логики)
 // TODO(Task): Обработка ошибок
 // TODO(Task): Удаление фотографий
-    // (Task): По одной
-    // TODO(Task): Массовое с главного экрана
-
+// TODO(Task): По одной
+// TODO(Task): Массовое с главного экрана

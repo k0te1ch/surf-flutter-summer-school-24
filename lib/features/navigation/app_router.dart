@@ -35,11 +35,11 @@ class AppRouter extends _$AppRouter {
         AutoRoute(
           page: PhotoCarouselRoute.page,
           path: AppRoutePaths.photoCarousel,
-          initial: true,
         ),
         AutoRoute(
           page: PhotoGridRoute.page,
           path: AppRoutePaths.photoGrid,
+          initial: true,
         )
       ];
 }

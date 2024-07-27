@@ -1,12 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:surf_flutter_summer_school_24/common/widgets/di_scope.dart';
-import 'package:surf_flutter_summer_school_24/features/photo_grid/data/repositories/photo_grid_repository.dart';
 import 'package:surf_flutter_summer_school_24/features/photo_grid/di/photo_grid_scope.dart';
 import 'package:surf_flutter_summer_school_24/features/photo_grid/presentation/screens/photo_grid/photo_grid_screen.dart';
 
 /// {@template photo_grid_flow.class}
-/// Entry point to feature .
+/// Entry point to feature.
 /// {@endtemplate}
 @RoutePage()
 class PhotoGridFlow extends StatelessWidget implements AutoRouteWrapper {
@@ -15,10 +14,8 @@ class PhotoGridFlow extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget wrappedRoute(BuildContext context) {
-    const repository = PhotoGridRepository();
-
     return DiScope<IPhotoGridScope>(
-      factory: (context) => PhotoGridScope(repository),
+      factory: (context) => PhotoGridScope.create(),
       onDispose: (scope) => scope.dispose(),
       child: this,
     );

@@ -49,7 +49,7 @@ final class PhotoCarouselWM extends WidgetModel<PhotoCarouselScreen, PhotoCarous
   @override
   Future<void> getPhotos() async {
     await model.loadPhotos();
-    _totalImagesNotifier.value = model.totalImages; // Обновляем totalImagesNotifier
+    _totalImagesNotifier.value = model.totalImages;
   }
 
   /// Get and set the current index of the carousel.
@@ -59,7 +59,7 @@ final class PhotoCarouselWM extends WidgetModel<PhotoCarouselScreen, PhotoCarous
   @override
   set currentIndex(int value) {
     model.currentIndex = value;
-    _currentIndexNotifier.value = value; // Обновляем currentIndexNotifier
+    _currentIndexNotifier.value = value;
   }
 
   @override

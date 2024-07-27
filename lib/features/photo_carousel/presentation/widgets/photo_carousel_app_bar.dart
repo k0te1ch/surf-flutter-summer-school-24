@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:surf_flutter_summer_school_24/features/photo_carousel/presentation/screens/photo_carousel/photo_carousel_wm.dart';
-import 'package:surf_flutter_summer_school_24/util/extensions/context_x.dart';
+import 'package:surf_flutter_summer_school_24/common/utils/extentions/context_x.dart';
 
 class PhotoCarouselAppBar extends StatelessWidget implements PreferredSizeWidget {
   final IPhotoCarouselWM wm;

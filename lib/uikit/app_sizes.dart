@@ -50,4 +50,10 @@ abstract class AppSizes {
 
   /// Value double 1000.
   static const double1000 = 1000.0;
+
+  /// Small radius.
+  static const radiusSmall = 8.0;
+
+  // Small padding.
+  static const paddingSmall = 10.0;
 }
